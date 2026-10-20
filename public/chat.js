@@ -1,10 +1,12 @@
 new window.EventSource("/sse").onmessage = function(event) {
-    window.messages.innerHTML += `<p>${event.data}</p>`;
+    const message = document.createElement('p');
+    message.textContent = event.data;
+    window.messages.appendChild(message);
 }
 
 window.form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    window.fetch(`/chat?message=${window.input.value}`);
+    window.fetch(`/chat?${new URLSearchParams({ message: window.input.value })}`);
     window.input.value = '';
 })
