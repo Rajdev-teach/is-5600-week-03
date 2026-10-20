@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test chat.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
+    "express": "^4.21.2",
     "node-fetch": "^3.2.6",
     "nodemon": "^3.1.0"
   }
